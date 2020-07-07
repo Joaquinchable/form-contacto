@@ -19,15 +19,15 @@
     <form action="email.php" class="container-formulario" method="post">
         
         <label for="username">Nombre</label>
-        <input type="text" name="nombre" required />
+        <input type="text" name="name" required />
         <label for="username">Telefono</label>
-        <input type="text" name="telefono" required />
+        <input type="text" name="phone" required />
         <label for="username">Email</label>
         <input type="text" name="email" required />
         <label for="username">Mensaje</label>
-        <textarea class="textarea" name="mensaje" rows="30" cols="30" style="overflow:auto;" required > </textarea>
+        <textarea class="textarea" name="message" rows="30" cols="30" style="overflow:auto;" required > </textarea>
         <br><br>
-        <input class="boton" type="submit" value="Enviar">
+        <input class="boton" type="submit" value="enviar">
     </form>
 
   </div>
