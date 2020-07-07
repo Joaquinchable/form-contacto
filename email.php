@@ -1,6 +1,6 @@
 <?php
 // correo al que enviaremos el manesaje 
-$destinatario = 'joaquincharo.developer@gmail.com';
+$to = 'joaquinchable9@gmail.com';
 
 
 
@@ -19,7 +19,7 @@ $carta .= "$telefono \n";
 $carta .= "$mensaje \n";
 
 // declaramos todo lo que enviaremos al correo
-mail($destinatario, $asunto, $header, $carta);
+mail($asunto, $asunto, $header, $carta);
 return true;
 // alertas de que el correo ese envio y el segundo echo para regresar a la pagina
 echo "<script>alert('correo enviado exitosamente')</script>";
