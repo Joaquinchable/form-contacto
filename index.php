@@ -16,14 +16,14 @@
      <hr color="black" size=2 width="40%" > 
      <br>
 
-    <form action="email.php" class="container-formulario" method="POST">
+    <form action="email.php" class="container-formulario" method="post">
         
         <label for="username">Nombre</label>
         <input type="text" name="nombre" required />
         <label for="username">Telefono</label>
-        <input type="tel" name="telefono" required />
+        <input type="text" name="telefono" required />
         <label for="username">Email</label>
-        <input type="email" name="email" required />
+        <input type="text" name="email" required />
         <label for="username">Mensaje</label>
         <textarea class="textarea" name="mensaje" rows="30" cols="30" style="overflow:auto;" required > </textarea>
         <br><br>
