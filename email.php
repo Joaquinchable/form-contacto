@@ -13,7 +13,7 @@ $mensaje = $_POST['mensaje'];
 // declaramos el mensaje 
 $asunto = "Contacto desde pagina web";
 
-$carta = "De: $nombre \n";
+$carta = "De:$nombre \n";
 $carta .= "$email \n";
 $carta .= "$telefono \n";
 $carta .= "$mensaje \n";
@@ -22,7 +22,7 @@ $carta .= "$mensaje \n";
 mail($destinatario, $asunto, $header, $carta);
 // alertas de que el correo ese envio y el segundo echo para regresar a la pagina
 echo "<script>alert('correo enviado exitosamente')</script>";
-echo "<script>alert setTimeout(\"location.href='index.html'\",1000)</script>";
+echo "<script>alert setTimeout(\"location.href='index.php'\",1000)</script>";
 
 
 ?>

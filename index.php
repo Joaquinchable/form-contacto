@@ -16,7 +16,7 @@
      <hr color="black" size=2 width="40%" > 
      <br>
 
-    <form action="email.php" class="container-formulario" method="POST">
+    <form  class="container-formulario" method="POST">
         
         <label for="username">Nombre</label>
         <input type="text" name="nombre" required />
@@ -31,6 +31,12 @@
     </form>
 
   </div>
+
+  <?php
+  
+  include("email.php")
+  
+  ?>
 
 
 </body>
