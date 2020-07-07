@@ -19,8 +19,8 @@ $carta .= "$telefono \n";
 $carta .= "$mensaje \n";
 
 // declaramos todo lo que enviaremos al correo
-mail($asunto, $asunto, $header, $carta);
-return true;
+mail($to, $asunto, $header, $carta);
+
 // alertas de que el correo ese envio y el segundo echo para regresar a la pagina
 echo "<script>alert('correo enviado exitosamente')</script>";
 echo "<script>alert setTimeout(\"location.href='index.php'\",1000)</script>";
