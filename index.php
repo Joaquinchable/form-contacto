@@ -32,7 +32,13 @@
 
   </div>
 
+  <?php
   
+  
+  include("./mail/email.php")
+  
+  ?>
+
 
 
 </body>
