@@ -1,30 +1,29 @@
 <?php
 
+// correo al que enviaremos el manesaje 
+$destinatario = 'joaquincharo.developer@gmail.com';
+
+
+
 // declaramos los inputs
 $nombre = $_POST ['nombre'];
 $telefono = $_POST['telefono'];
-$mail =  $_POST['email'];
+$email =  $_POST['email'];
 $mensaje = $_POST['mensaje'];
 
+// declaramos el mensaje 
+$asunto = "Contacto desde pagina web";
 
-$headers = $mail . "\r.\n";
-$headers .= "X-Mailer: PHP/". phpversion() . "\r.\n";	
-$headers .= "Mime-Version 1.0  \r.\n" ;	
-$headers .= "Content-Type : text/plain" ;	
+$carta = "De: $nombre \n";
+$carta .= "$email \n";
+$carta .= "$telefono \n";
+$carta .= "$mensaje \n";
 
-
-$mensaje = "Este mensaje fue enviado por " . $nombre . ",\r\n";
-$mensaje .= "Su e-mail es: " . $mail . " \r\n";
-$mensaje .= "Mensaje: " . $_POST['mensaje'] . " \r\n";
-$mensaje .= "telefono:" . $_POST['telefono'] . " \r\n";
-$mensaje .= "Enviado el " . date('d/m/Y', time());
-
-$para = 'joaquincharo.developer@gmail.com';
-$asunto = 'Mensaje de mi sitio web';
-
-mail($para, $asunto, utf8_decode($mensaje), $header);
-
-header("Location:index.html");
+// declaramos todo lo que enviaremos al correo
+mail($destinatario, $asunto, $carta);
+// alertas de que el correo ese envio y el segundo echo para regresar a la pagina
+echo "<script>alert('correo enviado exitosamente')</script>";
+echo "<script>alert setTimeout(\"location.href='index.html'\",1000)</script>";
 
 
 ?>
