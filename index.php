@@ -16,7 +16,7 @@
      <hr color="black" size=2 width="40%" > 
      <br>
 
-    <form class="container-formulario" method="post" action ="./mail/email.php">
+    <form class="container-formulario" method="post" >
         
         <label for="username">Nombre</label>
         <input type="text" name="nombre" required />
