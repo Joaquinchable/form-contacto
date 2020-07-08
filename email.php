@@ -1,37 +1,29 @@
 <?php
-if(isset($_POST['enviar'])){
- if(!empty($_POST['nombre']) && 
- !empty($_POST ['mansaje']) &&
- !empty($_POST['telefono']) && 
- !empty($_POST['email'])){
 
 // declaramos los inputs
 $nombre = $_POST ['nombre'];
 $telefono = $_POST['telefono'];
-$email =  $_POST['email'];
+$mail =  $_POST['email'];
 $mensaje = $_POST['mensaje'];
 
-$to = 'joaquincharo.developer@gmail.com';
-$headers = "From: noreply@yourdomain.com\n";
-$headers .= "Reply-To: $email";	
-$headers .= "X-Mailer: PHP/". phpversion();	
-$mail = mail($to,$nombre,$mensaje,$telefono,$header);
+
+$headers = $mail . "\r.\n";
+$headers .= "X-Mailer: PHP/". phpversion() . "\r.\n";	
+$headers .= "Mime-Version 1.0  \r.\n" ;	
+$headers .= "Content-Type : text/plain" ;	
 
 
+$mensaje = "Este mensaje fue enviado por " . $nombre . ",\r\n";
+$mensaje .= "Su e-mail es: " . $mail . " \r\n";
+$mensaje .= "Mensaje: " . $_POST['mensaje'] . " \r\n";
+$mensaje .= "telefono:" . $_POST['telefono'] . " \r\n";
+$mensaje .= "Enviado el " . date('d/m/Y', time());
 
-if($mail){
- echo "<h4> mensaje enviado </h4>";
- echo "<script>alert('correo enviado exitosamente')</script>";
- echo "<script>alert setTimeout(\"location.href='index.php'\",1000)</script>";
+$para = 'joaquincharo.developer@gmail.com';
+$asunto = 'Mensaje de mi sitio web';
 
-}
+mail($para, $asunto, utf8_decode($mensaje), $header);
 
-
- }
-
-}
-
-
-
+header("Location:index.html");
 
 ?>
